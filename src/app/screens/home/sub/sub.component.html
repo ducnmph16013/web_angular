@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="title">
+        <h3>Môn học</h3>
+    </div>
+    <div class="row">
+        <div class="col-4 border border-1" *ngFor="let item of listSubject">
+            <a [routerLink]="['../quiz/',item.Code]" routerLinkActive="router-link-active"><img [src]="'assets/logos/' + item.Logo" alt=""></a>
+            <div class="subject-item">
+                <div>
+                    <h5>{{item.Name}}</h5>
+                </div>
+                <button class="btn btn-primary" [routerLink]="['/quiz/' + item.Code]" routerLinkActive="router-link-active" >Làm bài</button>
+            </div>
+        </div>
+    </div>
+</div>

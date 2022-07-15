@@ -1,0 +1,22 @@
+<button class="btn btn-success" [routerLink]="['../sinh-vien/add']" routerLinkActive="router-link-active" >ADD</button>
+<table class="table table-hover">
+    <thead>
+        <th>ID</th>
+        <th>Avatar</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th colspan="2">Action</th>
+    </thead>
+    <tbody *ngIf="listStudent.length > 0 ">
+      <tr *ngFor="let item of listStudent">
+          <td>{{item.id}}</td>
+          <td><img [src]="item.avatar" style="width:80px;height:80px;object-fit:cover"></td>
+          <td>{{item.name}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.roles[0].name}}</td>
+          <td [routerLink]="['../sinh-vien/edit/',item.id]" routerLinkActive="router-link-active" >Sửa</td>
+          <td (click)="deleteStudent(item.id)">Xóa</td>
+      </tr>
+    </tbody>
+  </table>

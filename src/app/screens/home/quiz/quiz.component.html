@@ -1,0 +1,13 @@
+<div class="row">
+    <div *ngFor="let q of lstQuestions; index as i" class="col-6">
+        <h4>Câu hỏi {{i+1}}: {{q.Text}}</h4>
+        <div class="col" *ngFor="let an of q.Answers">
+            <input (change)="selectAnswer(q.id, an.id)" id="anw_{{an.id}}" type="radio" [name]="q.id" [value]="an.id"> 
+            <label for="anw_{{an.id}}">{{an.Text}}</label>
+        </div>
+                
+    </div>
+    <div class="col-12 d-flex justify-content-center mt-3">
+        <button (click)="submitExcercise()" class="btn btn-primary">Nộp bài</button>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+.big-news{
+    flex: 1;
+    border: 1px solid gray;
+}
+.news-thumb{
+    overflow: hidden;
+}
+.news-thumb img{
+    display: flex;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform .2s linear;
+}
+.news-title{
+    font-weight: bold;
+    font-size: 25px;
+    margin: 5px 0;
+    transition: color .2s linear;
+}
